@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPress" onKeyTyped="#onKeyType" prefHeight="750.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <children>
+      <Button layoutX="440.0" layoutY="659.0" mnemonicParsing="false" onAction="#submit" opacity="0.0" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: lightgray;" text="Focus" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="126.0" layoutY="14.0" mouseTransparent="true" text="Wordle Clone!" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="settingsButton" focusTraversable="false" layoutX="58.0" layoutY="709.0" mnemonicParsing="false" onAction="#onSettingsClicked" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: lightgray;" text="Settings" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="55.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="Q" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="105.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="W" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="155.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="E" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="205.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="R" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="255.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="T" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="305.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="Y" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="355.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="U" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="405.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="I" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="455.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="O" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="505.0" layoutY="559.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="P" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="65.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="A" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="115.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="S" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="165.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="D" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="215.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="F" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="265.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="G" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="315.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="H" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="365.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="J" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="415.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="K" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="465.0" layoutY="609.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="L" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="90.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="Z" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="140.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="X" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="190.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="C" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="240.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="V" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="290.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="B" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="340.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="N" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" focusTraversable="false" layoutX="390.0" layoutY="659.0" mnemonicParsing="false" onAction="#onScreenKey" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: lightgray;" text="M" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="submitButton" focusTraversable="false" layoutX="440.0" layoutY="659.0" mnemonicParsing="false" onAction="#submit" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: lightgray;" text="Submit" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button focusTraversable="false" layoutX="455.0" layoutY="509.0" mnemonicParsing="false" onAction="#onScreenBackspace" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: lightgray;" text="Backspace" textAlignment="CENTER" textFill="#565656">
+         <font>
+            <Font name="Gill Sans MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="currentWord" editable="false" layoutX="225.0" layoutY="709.0" visible="false" />
+      <Label fx:id="guessFail" layoutX="159.0" layoutY="488.0" mouseTransparent="true" text="Guessed word wasn't recognized!" textAlignment="CENTER" textFill="#a00000" visible="false">
+         <font>
+            <Font name="Gill Sans MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <GridPane fx:id="labelGrid" alignment="CENTER" layoutX="131.0" layoutY="74.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="414.0" prefWidth="347.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="guess1Slot1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" textAlignment="CENTER" textFill="#565656">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess1Slot2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess1Slot3" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess1Slot4" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess1Slot5" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess2Slot1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess2Slot2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess2Slot3" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess2Slot4" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess2Slot5" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess3Slot1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess3Slot2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess3Slot3" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess3Slot4" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess3Slot5" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess4Slot1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess4Slot2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess4Slot3" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess4Slot4" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess4Slot5" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess5Slot1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess5Slot2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess5Slot3" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess5Slot4" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess5Slot5" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess6Slot1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess6Slot2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess6Slot3" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess6Slot4" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="guess6Slot5" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: lightgray;" text=" " textAlignment="CENTER" textFill="#565656" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <AnchorPane fx:id="playButtonBackground" layoutY="70.0" prefHeight="680.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <Button layoutX="254.0" layoutY="320.0" mnemonicParsing="false" onAction="#onPlay" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" prefHeight="40.0" prefWidth="90.0" style="-fx-background-color: lightgray;" text="PLAY!" textAlignment="CENTER" textFill="#565656">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="settingsOverlay" prefHeight="750.0" prefWidth="600.0" visible="false">
+         <children>
+            <Rectangle height="751.0" opacity="0.5" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#f0f0f0" height="400.0" layoutX="150.0" layoutY="175.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
+            <Text fill="#565656" layoutX="252.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" textAlignment="CENTER">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="25.0" />
+               </font>
+            </Text>
+            <Button focusTraversable="false" layoutX="165.0" layoutY="537.0" mnemonicParsing="false" onAction="#settingsBack" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="&lt; Back">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button focusTraversable="false" layoutX="220.0" layoutY="263.0" mnemonicParsing="false" onAction="#resetButton" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="Reset Current Round">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button focusTraversable="false" layoutX="244.0" layoutY="363.0" mnemonicParsing="false" onAction="#saveProgress" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="Save Progress">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button focusTraversable="false" layoutX="243.0" layoutY="413.0" mnemonicParsing="false" onAction="#loadProgress" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="Load Progress">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button focusTraversable="false" layoutX="241.0" layoutY="463.0" mnemonicParsing="false" onAction="#clearProgress" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="Clear Progress">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button focusTraversable="false" layoutX="257.0" layoutY="313.0" mnemonicParsing="false" onAction="#statViewSettings" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="View Stats">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="gameEndOverlay" prefHeight="750.0" prefWidth="600.0" visible="false">
+         <children>
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#f0f0f0" height="249.0" layoutX="35.0" layoutY="495.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="531.0" />
+            <Button focusTraversable="false" layoutX="130.0" layoutY="695.0" mnemonicParsing="false" onAction="#resetRound" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="Play Again!">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <VBox alignment="CENTER" layoutX="176.0" layoutY="488.0" prefHeight="200.0" prefWidth="248.0" spacing="15.0">
+               <children>
+                  <Text fx:id="gameEndText" fill="#565656" strokeType="OUTSIDE" strokeWidth="0.0" text="Result" textAlignment="CENTER">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="40.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#565656" strokeType="OUTSIDE" strokeWidth="0.0" text=" " textAlignment="CENTER">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="outcomeText" fill="#565656" strokeType="OUTSIDE" strokeWidth="0.0" text="Outcome" textAlignment="CENTER">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="statText" fill="#565656" strokeType="OUTSIDE" strokeWidth="0.0" text="-----" textAlignment="CENTER" textOrigin="CENTER">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Button focusTraversable="false" layoutX="379.0" layoutY="695.0" mnemonicParsing="false" onAction="#statViewResults" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="View Stats">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="statsOverlay" prefHeight="750.0" prefWidth="600.0" visible="false">
+         <children>
+            <Rectangle fx:id="statBG" height="751.0" opacity="0.5" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#f0f0f0" height="500.0" layoutX="101.0" layoutY="113.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" />
+            <Text fill="#565656" layoutX="207.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Statistics" textAlignment="CENTER">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="130.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Played">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="130.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Games Won">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="145.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1st Guess">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="145.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2nd Guess">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="145.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3rd Guess">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="145.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4th Guess">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="145.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5th Guess">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="145.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6th Guess">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="130.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Win %">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#565656" layoutX="130.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Win Streak">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="gamesPlayed" fill="#565656" layoutX="372.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="94.7509765625">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="guess1" fill="#565656" layoutX="419.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="40.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="gamesWonTotal" fill="#565656" layoutX="372.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="94.7509765625">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="winPercent" fill="#565656" layoutX="372.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="94.7509765625">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="winStreak" fill="#565656" layoutX="372.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="94.7509765625">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="guess2" fill="#565656" layoutX="419.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="40.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="guess3" fill="#565656" layoutX="419.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="40.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="guess4" fill="#565656" layoutX="419.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="40.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="guess5" fill="#565656" layoutX="419.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="40.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="guess6" fill="#565656" layoutX="419.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="40.0">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="statBackButton" focusTraversable="false" layoutX="133.0" layoutY="559.0" mnemonicParsing="false" onAction="#statBack" onMouseEntered="#buttonEnterHover" onMouseExited="#buttonExitHover" style="-fx-background-color: lightgray;" text="&lt; Back">
+               <font>
+                  <Font name="Gill Sans MT Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
